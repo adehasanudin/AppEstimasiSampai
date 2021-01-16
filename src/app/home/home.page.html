@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> App Estimasi Sampai - Ade H</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-item>
+    <ion-label>Jam Berangkat</ion-label>
+    <ion-datetime
+      placeholder="00:00"
+      displayFormat="HH:mm"
+      [formControl]="jamInputX"
+      [(ngModel)]="jamInput"
+    ></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Jarak Tempuh (Km)</ion-label>
+    <ion-input
+      placeholder="Masukan jarak"
+      type="number"
+      clearInput
+      [formControl]="jarakInputX"
+      [(ngModel)]="jarakInput"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Kecepatan (Km)</ion-label>
+    <ion-input
+      placeholder="Masukan kecepatan"
+      type="number"
+      clearInput
+      [formControl]="kecInputX"
+      [(ngModel)]="kecInput"
+    ></ion-input>
+  </ion-item>
+
+  <div class="ion-padding-top">
+    <ion-button
+      [disabled]="jarakInputX.invalid || kecInputX.invalid || jamInputX.invalid"
+      expand="block"
+      (click)="openModal()"
+      >Hitung</ion-button
+    >
+  </div>
+</ion-content>
